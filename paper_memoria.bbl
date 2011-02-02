@@ -1,0 +1,58 @@
+\begin{thebibliography}{10}
+
+\bibitem{mnCompleto}
+Paper completo wikstrom.
+
+\bibitem{conf/focs/Canetti01}
+R.~Canetti.
+\newblock Universally composable security: {A} new paradigm for cryptographic
+  protocols.
+\newblock In {\em FOCS}, pages 136--145, 2001.
+
+\bibitem{conf/csfw/Canetti04}
+R.~Canetti.
+\newblock Universally composable signature, certification, and authentication.
+\newblock In {\em CSFW}, page 219. IEEE Computer Society, 2004.
+
+\bibitem{conf/tcc/CanettiDPW07}
+R.~Canetti, Y.~Dodis, R.~Pass, and S.~Walfish.
+\newblock Universally composable security with global setup.
+\newblock In S.~P. Vadhan, editor, {\em TCC}, volume 4392 of {\em Lecture Notes
+  in Computer Science}, pages 61--85. Springer, 2007.
+
+\bibitem{journals/cacm/Chaum81}
+D.~Chaum.
+\newblock Untraceable electronic mail, return addresses, and digital
+  pseudonyms.
+\newblock {\em Commun. ACM}, 24(2):84--88, 1981.
+
+\bibitem{conf/tcc/DodisKSW09}
+Y.~Dodis, J.~Katz, A.~Smith, and S.~Walfish.
+\newblock Composability and on-line deniability of authentication.
+\newblock In O.~Reingold, editor, {\em TCC}, volume 5444 of {\em Lecture Notes
+  in Computer Science}, pages 146--162. Springer, 2009.
+
+\bibitem{DwoNaoSah04}
+Dwork, Naor, and Sahai.
+\newblock Concurrent zero-knowledge.
+\newblock {\em JACM: Journal of the ACM}, 51, 2004.
+
+\bibitem{Pass03}
+Pass.
+\newblock On deniability in the common reference string and random oracle
+  model.
+\newblock In {\em CRYPTO: Proceedings of Crypto}, 2003.
+
+\bibitem{Wikstrom04a}
+Wikstrom.
+\newblock A universally composable mix-net.
+\newblock In {\em Theory of Cryptography Conference (TCC), LNCS}, volume~1,
+  2004.
+
+\bibitem{journals/tcs/YaoYZ09}
+A.~C.-C. Yao, F.~F. Yao, and Y.~Zhao.
+\newblock A note on universal composable zero-knowledge in the common reference
+  string model.
+\newblock {\em Theor. Comput. Sci}, 410(11):1099--1108, 2009.
+
+\end{thebibliography}

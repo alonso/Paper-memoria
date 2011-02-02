@@ -1,0 +1,1014 @@
+% THIS IS SIGPROC-SP.TEX - VERSION 3.1
+% WORKS WITH V3.2SP OF ACM_PROC_ARTICLE-SP.CLS
+% APRIL 2009
+%
+% It is an example file showing how to use the 'acm_proc_article-sp.cls' V3.2SP
+% LaTeX2e document class file for Conference Proceedings submissions.
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V3.2SP) *DOES NOT* produce:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) Page numbering
+% ---------------------------------------------------------------------------------------------------------------
+% It is an example which *does* use the .bib file (from which the .bbl file
+% is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission,
+% you need to 'insert'  your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% Questions regarding SIGS should be sent to
+% Adrienne Griscti ---> griscti@acm.org
+%
+% Questions/suggestions regarding the guidelines, .tex and .cls files, etc. to
+% Gerald Murray ---> murray@hq.acm.org
+%
+% For tracking purposes - this is V3.1SP - APRIL 2009
+
+\documentclass{acm_proc_article-sp}
+
+\begin{document}
+
+\title{A GUC-secure protocol for authenticated anonymous channels}
+\subtitle{[Extended Abstract]
+\titlenote{A full version of this paper is available as
+\textit{Author's Guide to Preparing ACM SIG Proceedings Using
+\LaTeX$2_\epsilon$\ and BibTeX} at
+\texttt{www.acm.org/eaddress.htm}}}
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+\numberofauthors{2} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Alonso Gonz\'alez U. \titlenote{No habla pa\~nol}\\
+       \affaddr{del Colo-Colo}\\
+       \affaddr{La Florida}\\
+       \affaddr{Santiago}\\
+       \email{alogonza@ing.uchile.cl}
+% 6th. author
+\alignauthor Charles Palmer\\
+       \affaddr{Palmer Research Laboratories}\\
+       \affaddr{8600 Datapoint Drive}\\
+       \affaddr{San Antonio, Texas 78229}\\
+       \email{cpalmer@prl.com}
+}
+% There's nothing stopping you putting the seventh, eighth, etc.
+% author on the opening page (as the 'third row') but we ask,
+% for aesthetic reasons that you place these 'additional authors'
+% in the \additional authors block, viz.
+\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
+email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
+(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
+\date{30 July 1999}
+% Just remember to make sure that the TOTAL number of authors
+% is the number that will appear on the first page PLUS the
+% number that will appear in the \additionalauthors section.
+
+\maketitle
+\begin{abstract}
+This paper provides a sample of a \LaTeX\ document which conforms to
+the formatting guidelines for ACM SIG Proceedings.
+It complements the document \textit{Author's Guide to Preparing
+ACM SIG Proceedings Using \LaTeX$2_\epsilon$\ and Bib\TeX}. This
+source file has been written with the intention of being
+compiled under \LaTeX$2_\epsilon$\ and BibTeX.
+
+The developers have tried to include every imaginable sort
+of ``bells and whistles", such as a subtitle, footnotes on
+title, subtitle and authors, as well as in the text, and
+every optional component (e.g. Acknowledgments, Additional
+Authors, Appendices), not to mention examples of
+equations, theorems, tables and figures.
+
+To make best use of this sample document, run it through \LaTeX\
+and BibTeX, and compare this source code with the printed
+output produced by the dvi file.
+\end{abstract}
+
+% A category with the (minimum) three required fields
+\category{H.4}{Information Systems Applications}{Miscellaneous}
+%A category including the fourth, optional field follows...
+\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+
+\terms{Theory}
+
+\keywords{ACM proceedings, \LaTeX, text tagging} % NOT required for Proceedings
+
+\section{Introduction}
+
+\section{Cryptographic model}
+
+We prove the security guarantees of our protocol in the Generalized Universal Composability (GUC) cryptographical
+framework. The GUC framework \cite{conf/tcc/CanettiDPW07} is a generalization of the Universal composability
+framework \cite{conf/focs/Canetti01}. Both frameworks models concurrent protocols, but the GUC framework also
+models concurrent protocols sharing state between them. Before the GUC framework were proposed an alternative way
+to model protocols sharing state in the UC framework was the use of JUC theorem, but this is not as general as
+it only allows protocols sharing state among themselves. Instead the GUC framework models protocols sharing state with
+unpredictable other protocols.\\
+We first review the UC frameworks as the GUC framework is exactly as UC with some minor, but significant, modifications.
+
+\subsection{The Universal Composability framework (UC)}
+The UC framework is a methodology for a modularized designing and modularized proving the security of
+\textit{real world} cryptographics protocols. The spirit of UC is to create a protocol and then abstract the
+security one  want the protocol have into a idealized secure protocol. Then it must be shown that
+executing the real or the idealized protocol is essentially the same, and then real protocol is as
+secure as the idealized protocol.\\
+Real world protocols are modeled as protocols running in a complete concurrent setting with many other protocols and
+possibly distributed among many parties. As in the real world the protocol can be monitored and some participants
+can have ``undesired" behavior, attempting with the desired security of the protocol. All the possible undesired behavior
+executed by one machine, the real adversary $\mathcal{A}$. In an execution of the protocol the adversary can eavesdrop and
+manipulate all the data sent from one  party to another, can corrupt some parties and then execute
+arbitrary code on them. On the other hand the ideal protocol, called the ideal functionality usually denoted by
+$\mathcal{F}$, runs in an ideal setting,
+that is executed by a secure party and the monitoring is restricted. In the ideal world there exists an ideal adversary
+$\mathcal{S}$ but it cannot
+eavesdrop and is only allowed to stop or drop exchanged data. The setting where the ideal protocol is executed with the
+real adversary is known as the \textit{real world}, and the setting where the ideal protocol is executed with the ideal
+adversary is known as the \textit{ideal world}. In both worlds concurrent execution with arbitrary other protocols is
+given by a special machine known as environment. In UC both the real an ideal protocol are analyzed isolated from other
+possibly concurrent protocols. It is considered that all the externals protocols and the outside calls to the protocol
+are are executed by the environment.
+To ensure that the real protocol achieves
+the desired security it must hold that that for any execution of the protocol in real world and for any adversarial
+strategy (that is for all environments and all real adversaries) there exists an adversarial strategy with limited
+resources (an ideal adversary) that has the same effect (the environment is not aware of any difference between the
+two strategies).\\
+
+\newdef{definition}{Definition}
+
+We review formal definitions given in \cite{mnCompleto}. There Wikstr\"om introduces
+a new machine to the UC framework, named the communication model.
+The communication model is in charge of all aspects of the
+communication in UC. This definition comes to simplify the definition of what the
+adversary can do in an execution, in fact the only difference between the real and the ideal
+adversary is the communication model. The introduction of a communication model
+also makes unnecessary the use of session id's as the communication models are local to each protocol instance.
+
+% Lo que sigue lo tome textual del paper de Wikstrom. No se si eso esta bien, pero
+% me parece innecesario re redactarlo
+
+\begin{definition}
+An ITM-graph is a set $V = \{P_1, \ldots, P_t\} \subset \textrm{ITM}$ with a set of
+links $E$ such that $(V, E)$ is a connected graph, and no $P_i$ is linked to any
+machine outside $V$. Let ITMG be the set of ITM-graphs.\\
+During the execution of an ITM-graph, at most one participant is active. An active
+participant may deactivate itself and activate any of its neighbors, or it may halt, in
+wich case the execution of the ITM-graph halts.
+\end{definition}
+
+The real communication model models an asynchronous communication network, in wich the
+adversary can read, delete, modify, and insert any message of its choice. 
+
+\begin{definition}
+A real communication model $\mathcal{C}$ is a machine with a link $l_{P_i}$, to $P_i$
+for $i = 1, \ldots, k$, , and a link $l_\mathcal{A}$ to a real adversary $\mathcal{A}$.
+Its program is defined as follows.
+\begin{enumerate}
+  \item If $m$ is read on $l_s$ where $s \in \{P_1, \ldots, P_k\}$, then $(s, m)$ is
+        written on $l_\mathcal{A}$ and $mathcal{A}$ is activated.
+  \item If $(r, m)$ is read on $l_\mathcal{A}$, where $r \in \{P_1, \ldots, P_k\}$
+        and $P_r$ is activated.
+\end{enumerate}
+\end{definition}
+
+For simplicity
+we avoid to explicitly call the real communication model. When in a real world
+protocol we write "$P_i$ send $m$ to $P_j$`` we mean "$P_i$ send $(P_j,m)$ to
+$\mathcal{C}$``.\\
+The ideal communication model below captures the fact that the adversary may decide if
+and when it would like to deliver a message from the ideal functionality to a
+participant, but it can not read the contents of the communication between participants
+and the ideal functionality.
+
+\begin{definition}
+An ideal communication model $\mathcal{C_I}$ is a machine with a link $l_{P_i}$, to
+$P_i$ for $i = 1, \ldots, k$,
+%a link $l_\mathtt{shared}$ to the ``outside world",
+and links $l_\mathcal{F}$, and $l_\mathcal{S}$ to a (shared) ideal functionality $\mathcal{F}$
+and an ideal adversary $\mathcal{S}$ respectively. Its program is defined as follows.
+\begin{enumerate}
+  \item If a message $m$ is read on $l_s$, where $s \in \{P_1, \ldots, P_k\}$,
+        then $(s, m)$ is written on $l_\mathcal{F}$ and $\mathcal{F}$ is activated.
+  \item If a message $(s, m)$ written on $l_\mathcal{F}$ is returned unaltered, $m$ is
+        written on $l_s$. If not, any string reqad from $l_\mathcal{F}$ is interpreted
+        as a list $((r_1, m_1), \ldots, (r_t, m_t))$, where $r_i \in \{\mathcal{S},
+        P_1, \ldots, P_k\}$. For each $m_i$ a random string $\tau_i \in \{0, 1\}^n$ is
+        chosen, and $(r_i, m_i)$ is stored under $(\tau_i)$. Then $((r_1, |m_1|, \tau_1),
+        \ldots, (r_t, |m_t|, \tau_t))$, where $|m_i|$ is the bit-length of $m_i$, is
+        written on $l_\mathcal{S}$ and $\mathcal{S}$ is activated.
+  \item Any string read from $l_\mathcal{S}$ is interpreted as a pair $(b, \tau)$, where
+        $b \in \{0, 1\}$ and $\tau$ is an arbitrary string. If $b = 1$ and $(r_i, m_i)$
+        is stored in the database under the index $\tau$, $m_i$ is written on $l_{r_i}$
+        and $r_i$ is activated. Otherwise $(\mathcal{S}, \tau)$ is written to
+       $l_\mathcal{F}$ and $\mathcal{F}$ is activated.
+%  \item If $(\mathtt{NewSession}, P'_1, \ldots, P'_{k'})$ is read from $l_\mathtt{shared}$,
+%        $\mathcal{F}$ is a shared functionality, and $P_i \neq P_j$ for $i = 1, \ldots,
+%        k \quad j = 1, \ldots, k'$ then let $\mathtt{shared} \leftarrow 1$. Else
+%        ignore the input.
+%  \item If $(s,m)$ is read on $l_\mathtt{shared}$, $\mathtt{shared} = 1$ and $s \neq P_i$
+%        for $i = 1, \ldots, k$, then write $(s, m)$ to $l_\mathcal{F}$. Else ignore the
+%        input
+\end{enumerate}
+\end{definition}
+
+%The $l_\mathtt{shared}$ allows the environment to create protocols sharing state with
+%the analized protocol through the shared functionality.\\
+An adversary can normally corrupt some subset of the participants in a protocol. A
+\textit{dummy participant} is a machine that given two links writes any message from
+one of the links to the other. There may be many copies of the dummy participant.
+Following Canetti we use the $\tilde{}$-notation, e.g. $\tilde{P}$, for dummy participants.
+%Similarly we introduce \textit{dummy functionalities}, a dummy functionality exactly as the
+%dummy participant but it have
+\\
+The ideal model below captures the ideal world, i.e. the environment
+may indirectly interact with ideal functionalities and the ideal adversary $\mathcal{S}$
+has some control over how the communication model behaves.
+
+\begin{definition}
+The ideal model is defined to be the map $\mathcal{I}:\textrm{ITM}^2 \times
+\tilde{\textrm{ITM}}^* \to \textrm{ITMG}$, where $\mathcal{I}: (\mathcal{F}, \mathcal{S}
+\tilde{P}_1, \ldots, \tilde{P}_k) \mapsto (V, E)$ is given by:
+$$V = \{\mathcal{C_I}, \mathcal{F}, \mathcal{S}, \tilde{P}_1, \ldots, \tilde{P}_k\}$$
+$$E = \{(\mathcal{S}, \mathcal{C_I}), (\mathcal{C_I}, \mathcal{F})\} \cup
+\bigcup_{i = 1}^{k}\{(\tilde{P}_i, \mathcal{C_I})\}$$
+\end{definition}
+
+If $\tilde{\pi} = (\tilde{P}_1, \ldots, \tilde{P}_k)$, we write
+$\mathcal{I}(\mathcal{S}, \tilde{\pi}^\mathcal{F})$ instead of $\mathcal{I}(\mathcal{F},
+\mathcal{S}, \tilde{P}_1, \ldots, \tilde{P}_k)$ to ease notation.\\
+The real model is supposed to capture the properties of the real world. The participants
+may interact over the real communication model.\\
+
+\begin{definition}
+The real model is defined to be a map $\mathcal{R}:\textrm{ITM}^* \to \textrm{ITMG}$,
+where $\mathcal{R}:(\mathcal{A}, P_1, \ldots, P_k) \mapsto (V, E)$ is given by:
+$$V = \{\mathcal{C}, \mathcal{A}, P_1, \ldots, P_k\}$$
+$$E = \{(\mathcal{A}, \mathcal{C})\}\cup\bigcup_{i=1}^k\{(P_i, \mathcal{C})\}$$
+\end{definition}
+
+Let $(V, E) = \mathcal{I}(\mathcal{F}, \mathcal{S}, \tilde{P}_1, \ldots, \tilde{P}_k)$.
+Then we write $\mathcal{Z}(\mathcal{I}(\mathcal{F}, \mathcal{S}, \tilde{P}_1, \ldots,
+\tilde{P}_k))$ for the ITM-graph $(V', E')$ defined by $V' = V \cup \{\mathcal{Z}\}$,
+and $E' = E \cup \{(\mathcal{Z}, \mathcal{S})\} \bigcup_{i=1}^k \{(\mathcal{Z}, \tilde{P}_i)\}$.
+We use the corresponding notation in the real model case.\\
+A hybrid model is a mix between a number of ideal and real models, and captures the execution
+of a real world protocol with access to some ideal functionalities. It is also a tool to
+modularize security proofs. It may be viewed as if we ``glue" a number of ideal and real
+models onto an original real model.
+
+\begin{definition}
+Suppose that we are given
+$(V, E) = \mathcal{R}(\mathcal{A}, \pi)$, $\pi = (P_1, \ldots, P_k)$.
+Let $(V_j, E_j) =
+\mathcal{I}(\mathcal{S}_j,
+            \tilde{\pi}^{\mathcal{F}_j}_j)$,
+$\tilde{\pi}_j = (\tilde{P}_{j, 1}, \ldots, \tilde{P}_{j, k})$ for $j = 1, \ldots, t$,
+and $(V_j, E_j) = \mathcal{R}(\mathcal{S}_j,\pi_j)$,
+$\pi_j = (P_{j, 1}, \ldots, P_{j, k})$ for $j = t+1, \ldots, s$.\\
+We denote by
+$\mathcal{H}(
+    \mathcal{A}^{
+        \mathcal{S}_1,
+        \ldots,
+        \mathcal{S}_t},
+    \pi^{
+        \tilde{\pi}_1^{\mathcal{F}_1},
+        \ldots,
+        \tilde{\pi}_t^{\mathcal{F}_t},
+        \pi_{t+1},
+        \ldots,
+        \pi_s})$
+the hybrid model defined as the ITM-graph $(V', E')$, where
+$$V' = V \cup \bigcup_{j=1}^t V_j \textrm{, and}$$
+$$E' = 
+    E
+    \cup
+    \bigcup_{j=1}^t E_j
+    \cup
+    \bigcup_{i=1}^k
+        \left(
+            \{(\mathcal{S}_i, \mathcal{A})\}
+            \cup
+            \bigcup_{j=1}^t \{(P_i, \tilde{P}_{j, i})\}
+        \right)$$
+Similarly as above we write
+$\mathcal{Z}(
+    \mathcal{H}(
+        \mathcal{A}^{
+            \mathcal{S}_1,
+            \ldots,
+            \mathcal{S}_t},
+        \pi^{
+            \tilde{\pi}_1^{\mathcal{F}_1},
+            \ldots,
+            \tilde{\pi}_t^{\mathcal{F}_t},
+            \pi_{t+1},
+            \ldots,
+            \pi_s}))$
+to denote the ITM-graph $(V'', E'')$ defined by 
+$V'' = V \cup \{\mathcal{Z}\}$,
+and 
+$E'' = 
+    E'
+    \cup
+    \{\mathcal{Z}, \mathcal{A}\}
+    \cup 
+    \cup \bigcup_{i=1}^k \{(\mathcal{Z}, P_i)\}$.
+\end{definition}
+
+
+The UC-security is given as the inhability of the environment to distinguish betwen the two worlds.
+
+\begin{definition}
+A protocol $\pi$ is said to UC-realize an ideal functionality $\mathcal{F}$ if and only if for all environment
+$\mathcal{Z}$, for all real world adversary $\mathcal{A}$ there exists an ideal world adversary $\mathcal{S}$
+and a negligible function $\eta$ such the following holds
+$$\left| \Pr[\mathcal{Z}(\mathcal{H}(\mathcal{A},\pi))=1] - 
+	 \Pr[\mathcal{Z}(\mathcal{I}(\mathcal{S},\mathcal{F}))=1] \right| \leq \frac{1}{\eta}$$
+\end{definition}
+
+A protocol UC-realizing an ideal functionality $\mathcal{F}$ can be completely replazed by the ideal functionality,
+and nobody can realize of it. The last is guaranted by the \textit{Composition theorem}:
+
+\newtheorem{theorem}{Theorem}
+
+\begin{theorem}
+Suppose that
+$\pi^{
+    \tilde{\pi_1^{\mathcal{F}_1}},
+    \ldots,
+    \tilde{\pi_t^{\mathcal{F}_t}}}$
+is a protocol that UC-realize the ideal functionality $\tilde{\pi}^{\mathcal{F}}$. Let $\rho^\pi$
+be a soubroutine respecting protocol which calls the protocol $\pi$. Then execution of the protocol
+$\rho^{\pi/\mathcal{F}}$ in
+the $\mathcal{F}-hybrid$ model is indistinguishable from the execution of the protocol $\rho^\pi$
+\end{theorem}
+
+By $\rho^{\pi/\mathcal{F}}$ whe refer to the same code of the protocol $\rho^\pi$, but all the calls to $\pi$
+are replaced by calls to $\mathcal{F}$.\\
+A soubroutine respecting protocol is protocol with no shared state with other protocols and his importance
+is discussed next.\\
+
+\subsection{The Generalized UC framework (GUC)}
+A restriction on protocols to be UC-secure is that it must be \textit{soubroutine respecting} one. That is, the protocol
+and all its soubroutines must not provide input or output with another protocols. In other words the protocol
+and the soubroutines called by the protocol are independent of all other protocols and can't share state with
+other protocols. If this restriction is not acomplished the the UC-theorem could not
+hold.\\
+One sceneario where is not reallistic to assume that protocols are soubroutine respecting is when setup
+assumptions are needed to UC-emualte the ideal functionality. For example consider the
+case of zero knowledge, is known that is impossible to realize zero knowledge proofs without some setup
+assumption like the common random string (CRS) when only the monority of the partys is honest 
+%TODO: No estoy seguro si es la referencia correcta
+\cite{CanKusLin06}.
+In UC the CRS is modeled as an ideal functionality
+$\mathcal{F}_{CRS}$ that publicizes a random string to all partys, and zero knowledge protocols are proved to
+UC-realize an ideal zero knowledge functionality in the $\mathcal{F}_{CRS}$. The CRS can be considered a
+shared variable between all protocols using it. Such ideal functionaly (a trusted party) is obvious to be hard
+to obtain in the real world, and for that
+reason is unrealistic to be considered local to a single protocol session. In fact it must be considered
+shared between the many zero knowledge protocols and possibly other protocols. In the case of a shared
+$\mathcal{F}_CRS$ used for realizing a ZK protocol is shown in \cite{Pass03} that it leads to loose of
+the natural deniability of a ZK protocol. Furthermore in \cite{journals/tcs/YaoYZ09} is shown that it
+% Revisar estas frases
+also could lead to the loose of general composability and the "Proof of knowledge" propiety.\\
+In GUC protocols can be not soubroutine respecting but $\bar{\mathcal{G}}-$\textit{soubroutine rescpecting},
+and it means that the protocol is soubroutine respecting except that is allowed to call the \textit{shared
+functionality} $\bar{\mathcal{G}}$.
+GUC framework models $\bar{\mathcal{G}}$-soubroutine respecting  protocols by allowing the environment to
+impersonate dummy partys connected to the shared functionality. This
+small change makes able to the environment to simulate protocols sharing state with the analized protocol.\\
+The formal modification is done as follows. Consider the ITM-graph $(V, E)$ given by
+$\mathcal{H}(
+    \mathcal{A}^{\mathcal{S}_1, \ldots, \mathcal{S}_t},
+    \pi^{
+        \tilde{\pi}_1^{\mathcal{F}_1},
+        \ldots,
+        \tilde{\pi}_r^{\mathcal{F}_r},
+        \tilde{\pi}_{r+1}^{
+        \bar{\mathcal{G}}_{r+1}},
+        \ldots,
+        \tilde{\pi}_t^{\bar{\mathcal{G}}_t},
+        \pi_{t+1},
+        \ldots,
+        \pi_s}))$,
+we write $\mathcal{Z}(V, E)$ to denote the ITM-graph $(V'', E'')$ defined by $V'' = V \cup
+\{\mathcal{Z}\}$, and $E'' = E' \cup \{\mathcal{Z}, \mathcal{A}\} \cup \bigcup_{i=1}^k
+\bigcup_{j=r+1}^t \{(\mathcal{Z}, \tilde{P}_{i,j})\} \cup \bigcup_{i=1}^k \{(\mathcal{Z}, P_i)\}$.
+We remark that the set links $\bigcup_{i=1}^k \bigcup_{j=r+1}^t \{(\mathcal{Z}, \tilde{P}_{i,j})\}$
+Similarly as in UC one can define GUC realization of an ideal functionality with for
+$\bar{\mathcal{G}}-$subroutine respecting protocols, and is also possible to demonstrate a composition
+theorem for $\bar{\mathcal{G}}-$subroutine respecting protocols.
+
+\subsection{Deniable authentication in the GUC framework}
+Deniable authentication was first defined, outside the (G)UC framework, by Dwork, Nahor and Sahai in
+\cite{DwoNaoSah04}. Several modificatons and generalizatons have been made since then, and here we consider
+the definition given by Dodis, Katz, Smith and Walfish in \cite{conf/tcc/DodisKSW09}, since that is the one who
+applies to a concurrent and distributted setting\\
+Roughly speaking a protocol is deniable if nobody can prove that a particular session of
+the protocol is taking place or have ever took place. In \cite{conf/tcc/DodisKSW09} is shown that such propiety
+can be achieved considering an online judge who must decide who is he talking to: an informant who is observing
+a real session of the authentication protocol, or a misinformant who do not have access to the real session of
+the protocol but stil try to convice the judge that the session is taking place. The protocol is said to be
+an on-line deniable authentication protocol if for all judge and all informants there exist a misinformant such that
+the judge can't distinguish from the informant and the misinformant with overwhelming probability. In the
+full version of \cite{conf/tcc/DodisKSW09} is demostrated that this notion is equivalent to GUC-realize the
+functionality $\mathcal{F}_{auth}$. They pointed out that in the GUC framework a protocol GUC-realizing
+a funtionality $\mathcal{F}$ is as deniable as $\mathcal{F}$. The ideal functionality $\mathcal{F}_{auth}$ is
+``fully simulatable'', that means that the protocol can be completely simulated without the participation
+% Tengo una duda. En conf/tcc/DodisKSW09 nunca definen a los protocolos on-line deniable, solo definen
+% los on-line deniable authentication. No se como definir los on-line deniable sin que paresca que los
+% defini yo, porque salvo la definicion con titulo definition hablan siempre en terminos generales
+of any party, then the functionality $\mathcal{F}_{auth}$ is deniable. Because a judge can distinguish
+from the real protocol, the ideal functionality and the simulated ideal functionality.\\
+Then we can define deniable protocols in a very similar way that a deniable authentication protocol is defined,
+in terms of a judge, an informant and a misinformant.
+Using the same arguments of \cite{conf/tcc/DodisKSW09} we can show  that a protocol is deniable if it
+GUC-realize a fully simulatable functionality.
+
+\section{Annonymous Channels} \label{sect:AC}
+% Para que quede mejor podria poner tu definicion de anonimato, pero consecuentemente deberia probar
+% que la funcionalidad ideal F_aac cumple con una de las defs. Cosa que no he hecho
+Annonymous channels allow users to echange messages without revealing their identities. Several protocols
+have been proposed in the literature for anonymous channels. The modern study of anonymous channels was
+started in \cite{journals/cacm/Chaum81} with \textit{mix-nets}. In a mix-net protocol the vector of all
+partys encrypted messages ar sent trough a set of \textit{mixers}. Each mixer perform an operation on cyphertexts
+(ussualy partialy decryption or reencryption) and send a randmon permutacion to the next mixer. Finally the
+last mixer publish a permutation of the vector of partys messages. Several modifications have been proposed
+to mix-nets since Chaum's seminal paper, increasing tolerance to dishonest partys, robustness and many other
+desirable porpertys.\\
+To realize our protocol we use the universal composable mixnet proposed by Wikstr\"om in \cite{Wikstrom04a}.
+Bassically Wikstr\"om's mixnet proceeds as follows:
+
+\begin{enumerate}
+
+\item Each sender $P_i$ waits for mixers public keys and computes the product public key.
+      Then each encrypt his message under the product public key, publish the cyphertext
+      to a bulletin board an proove in zero knowledge that it is a valid cyphertext.
+\item Each mixnet $M_j$ $j\in{1, \ldots, k}$ discards all the published cyphertexts that
+      are not valid. Then, for $l = 1, \ldots, k$ if $l = j$ the mixer partialy decript
+      the list of cyphertexts obtained from the bulletin board, perform a randomly chosen
+      permutation on the list of cyphertext, publish on the bulletin board and proove in
+      zero knowledge that the published list is a random permutation of the previous list.
+      If $l \neq j$ the mixer must check that the permutation published by the mixer $M_l$
+      is a valid one. Finally lexicographically sort the final published list and output it.
+
+\end{enumerate}
+
+In \cite{Wikstrom04a} is shown that this protocol UC-realize the ideal functionality $\mathcal{F}_{MN}$,
+defined in figure \ref{func:F_MN}, in the $\mathcal{F}_{KG}-hybrid$ model. 
+% Podria ser bueno In the apendix we show that this protocol also GUC-realize con F_KG share
+
+
+\begin{figure}
+\begin{centering}
+\framebox{\begin{minipage}[t]{1\columnwidth}
+\center{The Ideal functionality $\mathcal{F}_{MN}$ running with mixers $M_{1}, \ldots, M_{k}$, senders
+        $P_{1}, \ldots, P_{N}$, and ideal adversary $\mathcal{S}$}
+\begin{enumerate}
+    \item Initialize a list $L = \emptyset$, and sets $J_P = \emptyset$ and $J_M = \emptyset$.
+    \item Suppose $(P_{i}, \mathtt{Send}, m_{i})$  $m_{i} \in G_q$ is received from $\mathcal{C_I}$.
+          If $i\notin J_P$, set $J_P \leftarrow J_P \cup \{i\}$, and append $m_i$ to the list $L$. Then
+          hand $(\mathcal{S}, P_i, \mathtt{Send})$ to $\mathcal{C_I}$.
+    \item Suppose $(M_{j}, \mathtt{Run})$ is received from $\mathcal{C_I}$. Set
+          $J_M \leftarrow J_M \cup \{j\}$. If $|J_M | \geq k/2$, then sort the list $L$ lexicographically
+          to form a list $L'$, and hand
+          $((\mathcal{S}, M_{j}, \mathtt{Output}, L'), \{M_l , \mathtt{Output}, L'\}_{l=1}^{k})$ to
+          to $\mathcal{C_I}$. Otherwise, hand $\mathcal{C_I}$ the list $(\mathcal{S}, M_{j}, \mathtt{Run})$
+\end{enumerate}
+\end{minipage}}
+\end{centering}
+\caption{The functionality $\mathcal{F}_{MN}$}
+\label{func:F_MN}
+\end{figure}
+
+\section{Annonymous Authenticated Channels}
+
+\subsection{The $\mathcal{F}_{AAC}$ ideal funtionality}
+An "annonymous authenticated channel" should allow parties to send authenticated messages to any other party without
+revealing their identities. We formally define an annonymous authenticated channel through the definition of an ideal
+functionality called $\mathcal{F}_{AAC}$ (figure \ref{func:F_AAC}).
+
+\begin{figure}
+\begin{centering}
+\framebox{\begin{minipage}[t]{1\columnwidth}
+\center{Functionality $\mathcal{F}_{AAC}$ runnig with party $P_1,\ldots,P_N$ and
+        adversary $\mathcal{S}$ procceds as follows}
+\begin{enumerate}
+    \item Initialize $\Gamma \leftarrow \emptyset$, $M \leftarrow \emptyset$ and $I = \emptyset$
+    \item If $(\tilde{P}_i, \mathtt{Register})$ is received from $\mathcal{C_I}$ then set
+          $I \leftarrow I \cup \{i\}$
+    \item Suppose $(\tilde{P}_i, \mathtt{Send}, m_i, j)$ is received from $\mathcal{C_I}$, do:\\
+          If $i \notin I$ or $j \notin I$ then send $(\tilde{P}_i, \perp)$ to 
+          $\mathcal{C_I}$.\\
+          If $P_i$ or $P_j$ are corrupted then send $(\mathcal{S}, \mathtt{Sign}, m_i, i, j)$
+          $m_i \in G_q$ to $\mathcal{C_I}$, wait until receiving
+          $(\mathcal{S}, \mathtt{Signature}, m_i, i, j, \sigma_{i,j})$ $\sigma_{i,j} \in G_q$
+          from $\mathcal{C_I}$ and let $\Gamma \leftarrow \Gamma \cup \{(m_i, i, j, \sigma_{i,j})\}$.\\
+          If $P_i$ nor $P_j$ are corrupted then choose $r \overset{R}{\leftarrow} G_q$, let
+          $\sigma_{i,j} \leftarrow \mathrm{MAC}_r(m)$, send
+          $(\mathcal{S}, P_i, \mathtt{Send})$ to $\mathcal{C_I}$,
+          and let $\Gamma \leftarrow \Gamma \cup \{(m_i, i, j, \sigma_{i,j})\}$ and
+          let $M \leftarrow M \cup \{(m_i, \sigma_{i,j})\}$
+          % Hasta cuando recibo mensajes?
+    \item For each $j \in \{1, \ldots, N\}$ let the multiset
+          $M_j = \{(m_i, i)|,(m_i, i, j, \sigma_{i,j}) \in \Gamma\}$,
+          send $(\tilde{P}_j, \mathtt{Messages}, M_j)$ to $\mathcal{C_I}$ and send
+          $(\mathcal{S}, \mathtt{Messages}, M)$ to $\mathcal{C_I}$.
+    %\item If $(\tilde{P}_j, \mathtt{Check}, m, \sigma, \tilde{P}_i)$ is received from
+    %      $\mathcal{C_I}$ then if $(m, i, j, \sigma) \in \Gamma$  let $b \leftarrow 1$, 
+    %      if not $b \leftarrow 0$. Send $(\tilde{P}_j, \mathtt{Checked}, b)$ and
+    %      $(\mathcal{S}, \tilde{P}_j, \mathtt{Checked})$.
+\end{enumerate}
+\end{minipage}}
+\end{centering}
+\caption{The ideal functionality $\mathcal{F}_{AAC}$}
+\label{func:F_AAC}
+\end{figure}
+
+
+
+\subsection{The SIGMIX protocol}
+Providing annonimity and authenticity seems to be contradictory at first sight, but we note that it can be realized if:
+\begin{enumerate}
+    \item The messages are signed.
+    \item Only the addresee can prove if the party $P_i$  is the author of an autheticated message.
+    \item The addresee can't prove to anybody else if $P_i$ is the author message.
+    \item The sending of messages is done in an annonimous way.
+\end{enumerate}
+
+% Tengo que probarlo
+A first natural attemp to realize $\mathcal{F}_{AAC}$ notion is by simply combining an annonimous
+channel and a protocol GUC-realizing the ideal functionality $\mathcal{F}_{CERT}$ of \cite{conf/csfw/Canetti04}.
+But this attempt fails as the ideal functionality $\mathcal{F}_{CERT}$ allows all partys to verify the authenticity
+of a pair $(m, \sigma)$. This brings loose of anonnimity by publicly binding the identity of the sender of $m$ with
+$(m, \sigma)$. Furthermore each instance of $\mathcal{F}_{CERT}$ is restricted to only one signer and *.
+% Me hablaste una vez que el % anonimato tiene que ser entre varios, podrias terminar esta oracion con eso?.
+% Porque trate pero "no me sale"
+\\
+Instead we use a modified version of the GUC-secure authentication protocol with respect to static adversaries, from
+\cite{conf/tcc/DodisKSW09}. Noting that they use a deniable signing process that help us to achieve point 2 of our
+attempt to realize $\mathcal{F}_{AAC}$. The signing process is done through a signature that depends
+not only on the content of message an the identity of the sender, instead it additionaly depends on the identity
+of the receiver allowing only the receiver to verify the authenticity of the pair $(m, \sigma)$. The point 4 is
+achieved used the Wikstr\"om's mixnet described in section \ref{sect:AC}.\\
+%In the appendix we show that $\mathcal{F}_{AUTH}$ can be realized using $\mathcal{F}_{AAC}$ and in
+%\cite{conf/csfw/Canetti04} is shown that no usefull protocol can UC-realize $\mathcal{F}_{AUTH}$ in
+%the bare model. This implies that $\mathcal{F}_{AAC}$ cannot be GUC-realized in the bare model. But, similarly as
+%$\mathcal{F}_{AUTH}$, it can be reealized in the $\bar{\mathcal{G}}_{KRK}-hybrid$ model with static adversaries.\\
+The SIGMIX protocol runs in the $\mathcal{F}_{MN}, \bar{\mathcal{G}}_{KRK}-hybrid$ model with static adversaries.
+The Key registration with knowledge $\bar{\mathcal{G}}_{KRK}$ shared functionality from \cite{conf/tcc/DodisKSW09}
+(figure \ref{func:g_krk}) provides a PKI for any protocol running concurrently with the SIGMIX protocol. It is
+stressed that any other protocol using $\bar{\mathcal{G}}_{KRK}-hybrid$ migth share $(sk,pk)$ pairs with SIGMIX
+as long as they don't publicize secret keys.
+% Esto puede cambiar, pero tengo que verlo bien
+On the other hand we consider the functionalty $\mathcal{F}_{MN}$ as a traditional UC ideal functionality,
+meaning that each instance of $\mathcal{F}_{MN}$ is local to each calling protocol.
+To proceed with SIGMIX Each sender $P_i$ signs
+a message $m_i$ to $P_j$ with a MAC using a shared secret key $k_{ij}$ between $P_i$ and $P_j$.
+Let $G_q$ a cycliq group of order $q$ where the Decissional Diffie-Hellman
+assumption holds, and let $g$ a generator for $G_q$. Suppose that $P_i$ and $P_j$ have registered pairs of
+secret key/public keys $(x_i, y_i=g^{x_i})$ and $(x_j, y_j=g^{x_j})$ such that $x_i, x_j \in G_q$.
+Then the shared secret key $k_{ij}$ can be non-interactively computed by $P_i$ with $k_{ij}=y_j^{x_i}$ and by
+$P_j$ with $k_{ij}=y_i^{x_j}$. The signed message $(m_i, \sigma_{ij}=MAC_{y_{ij}(m_i)})$ is sent to $P_j$
+using the mixnet and finally $P_j$ can check the authenticty recalculating the MAC. The SIGMIX protocol is
+described in figure \ref{SIGMIX}
+
+\begin{figure}
+\framebox{
+\begin{minipage}[t]{1\columnwidth}
+The protocol SIGMIX runnig with partys $P_1,\ldots,P_N$ in the 
+$\mathcal{F}_{MN}, \bar{\mathcal{G}}_{KRK}-hybrid$ proceeds as follows:\\
+
+Registration. Each party $P_i$ registers as follows.
+\begin{enumerate}
+    \item Wait for input $(\mathtt{Register})$
+    \item Hand $(\mathtt{Retrieve}, P_i)$ to $\bar{\mathcal{G}}_{KRK}$ and let $(x_i, y_i)$
+          the answer.
+    \item If the answer was $(P_i, \perp)$ then let $x_i \overset{R}{\leftarrow} G_q$ and
+          $y_i \leftarrow g^{x_i}$. Hand $(\mathtt{register}, x_i)$ to $\bar{\mathcal{G}_{KRK}}$.
+\end{enumerate}
+
+Sender $P_i$. Each sender $P_i$ proceeds as follows.
+% Deberia haber una parametro para que el l-esimo haga que los mixers empiezen a funcionar
+% Hasta el momento no estoy manejando los mixers y son parte de la interfaz de F_MN
+\begin{enumerate}
+    \item Wait for input $(\mathtt{Send}, P_j, m_i)$.
+    \item Hand $(\mathtt{Retrieve}, P_j)$ to $\bar{\mathcal{G}}_{KRK}$ and let $y_j$ the answer.
+    \item If the answer was $\perp$ then return $\perp$. Else compute $k_{ij} \leftarrow y_j^{x_i}$
+          and then compute $\sigma_i = \mathrm{MAC}_{k_{ij}}(m_i)$.
+    \item Hand $(\mathtt{Send}, m_i||\sigma_i)$ to $\mathcal{F}_{MN}$.
+    \item Return $(\mathtt{Sent}, P_j, m_i)$
+\end{enumerate}
+
+Receiver $P_j$. Each receiver $P_j$ proceeds as follows.
+\begin{enumerate}
+    \item Wait for an input $(\mathtt{Output}, L)$ from $\mathcal{F}_{MN}$.
+    \item Let $y_1, \ldots, y_N$ the public keys of all partys participating in
+          the protocol. For each $i \in \{1, \ldots, N\}$ compute shared secret
+          $k_{ij} \leftarrow  y_{i}^{x_j}$
+    \item Let the multiset $M_j \leftarrow \emptyset$. For each $(m_l, \sigma_l) \in L$
+          and for each $k_{ij}$, if $\sigma_l = \mathrm{MAC}_{k_{ij}}(m_l)$ then
+          $M_j \leftarrow M_j \uplus \{(m_l, l)\}$.
+    \item Return $(\mathtt{Messages}, M_j)$.
+\end{enumerate}
+
+\end{minipage}}
+\caption{The protocol SIGMIX}
+\label{SIGMIX}
+\end{figure}
+
+The security of SIGMIX is guaranteed by lemma \ref{lemma:sigmix}
+
+\newtheorem{lemma}{Lemma}
+
+\begin{lemma} 
+The protocol SIGMIX GUC-emulates the ideal functionality $\mathcal{F}_{AAC}$ in the
+$\mathcal{F}_{MN}, \bar{\mathcal{G}}_{KRK}-hybrid$ model with respect to static adversaries.
+\label{lemma:sigmix}
+\end{lemma}
+
+\begin{proof}
+\textit{(Lema \ref{lemma:sigmix})}
+The proofs proceed as follows: For each real adverdsary $\mathcal{A}$ we construct an ideal adversary
+$\mathcal{S^A}$ who attacks $\mathcal{F}_{AAC}$,
+if there exists an adversary $\mathcal{A}$ and an environment $\mathcal{Z}$ that disntinguish from an
+execution of
+$\mathcal{H}(\mathcal{S},
+             \tilde{\pi}^{\mathcal{F}_{AAC}},
+             \tilde{\rho}^{\bar{\mathcal{G}}_{KRK}})$
+from an execution of
+$\mathcal{H}(\mathcal{A},
+             \textrm{SIGMIX}, 
+             \tilde{\rho}^{\bar{\mathcal{G}}_{KRK}},
+             \tilde{\phi}^{\mathcal{F}_{MN}})$,
+then the Diffie-Hellman assumption or the unforgeability of the MAC can be
+broken.\\
+Let be $I_{\mathcal{A}} \subseteq \{1, \ldots, N\}$ the set indexes of partys corrupted by $\mathcal{A}$.
+The ideal adversary $\mathcal{S^A}$ is described in figure \ref{adv_S_A}, and it simulates
+the execution of SIGMIX only with access to $\mathcal{F}_{AAC}$. As the values of honest sent messages
+(the sender and the receiver are honest) remains unknown to $\mathcal{S^A}$ until all messages are sent,
+$\mathcal{S^A}$ cheats the simulated $\mathcal{A}$ making $\mathcal{F}_{MN}$ tells $\mathcal{A}$ that
+the message was sent. Finally, when the set of honest sent messages $M$ is revealed to $\mathcal{S}$, it
+silently makes the simulated partys send the messages to $\mathcal{F}_{MN}$. This seems to $\mathcal{A}$
+indistinguishable from an execution where an unrealistic adversary $\mathcal{S}'^{\mathcal{A}}$ guesses
+the messages sent from $\mathcal{Z}$ to each honest party, as the strings seen by $\mathcal{A}$ are the
+same in both experiments.
+
+\begin{figure}
+\framebox{\begin{minipage}[t]{1\columnwidth}
+Ideal adversary $\mathcal{S^A}$ running with partys $\tilde{P}_1, \ldots, \tilde{P}_N$
+and shared functionality $\bar{\mathcal{G}}_{KRK}$ proceeds as follows:\\
+
+At the begining $\mathcal{S^A}$ corrupts parties $\tilde{P}_i$ $i \in I_\mathcal{A}$ and
+executes a simulation of
+$\mathcal{Z}'(\mathcal{H}(\mathcal{A},
+              \textrm{SIGMIX},
+              \tilde{\pi}^{\bar{\mathcal{G}}_{KRK}}, 
+              \tilde{\rho}^{\mathcal{F}_{MN}}))$,
+where $\mathcal{Z}'$ is machine controlled by $\mathcal{S^A}$, and
+$\bar{\mathcal{G}}_{KRK}$ and $\mathcal{F}_{MN}$ are honestly simulated with some minor
+modifications.\\
+
+Simulation of link $(\mathcal{Z}', \mathcal{A})$ with $(\mathcal{Z}, \mathcal{S})$:\\
+If $m$ is received from $\mathcal{Z}$ then make $\mathcal{Z}'$ send $m$ to $\mathcal{A}$.
+If $m$ is sent from $\mathcal{A}$ to $\mathcal{Z}'$ then send $m$ to $\mathcal{Z}$\\
+
+Simulation of corrupted partys $\tilde{P}_i$ $i \in I_\mathcal{A}$:
+
+\begin{enumerate}
+\item If $P_i$ $i \in I_\mathcal{A}$ send $m||\sigma$ to $\mathcal{F}_{MN}$ and
+      $\sigma = \textrm{MAC}_{y_j^{x_l}}(m)$ for some registered public key $y_j$ $j \in \{1, \ldots, N\}$
+      and some registered secret key $x_l$ $l \in I_\mathcal{A}$, then send
+      $(\mathtt{Send}, m, j)$ to $\tilde{P}_l$ wait for $(\mathtt{Sign}, m, l, j)$ from $\mathcal{C_I}$ and
+      send $(0, \mathtt{Signature}, m, l, j, \sigma)$. If $\sigma \neq \textrm{MAC}_{y_j^{x_l}}(m)$ for all
+      registered public keys $y_j$ $j \in \{1, \ldots, N\}$ and all registered secret keys $x_l$ $l \in I_\mathcal{A}$
+      do nothing.
+\item If $P_i$ sends $(\mathtt{Register}, x_i)$ to the simulated $\bar{\mathcal{G}}_{KRK}$, then send
+      $(\mathtt{Register}, x_i)$ to $\tilde{P}_i$.
+\end{enumerate}
+
+Simulation of honest partys $P_i$ $i \in I_\mathcal{A}$:
+\begin{enumerate}
+    \item Let $M'_j = \emptyset$ for $j = 1, \ldots, k$, $l_s \leftarrow 0$ and $l_r \leftarrow 0$.
+    \item If  $(\tilde{P}_i, \mathtt{Send})$ is received from $\mathcal{C_I}$
+          then make $\mathcal{Z}'$ sends $(\mathtt{Register})$ to $P_i$ and make $\mathcal{F}_{MN}$ sends
+          $(\mathcal{S}_{\mathcal{F}_{MN}}, \tilde{P}_i, \mathtt{Send})$ to its own copy of $\mathcal{C_I}$.
+    \item If $(\mathtt{Sign}, m, i, j)$ is received from $\mathcal{C_I}$ recover $x_j$ and $y_i$ from
+          $\bar{\mathcal{G}}_{KRK}$ (not the simulated one), let $\sigma_{i,j} = \mathrm{MAC}_{y_i^{x_j}}(m)$,
+          make $\mathcal{Z}'$ sends $(\mathtt{Register})$ to $P_i$ and then sends $(\mathtt{Send}, m, j)$ to
+          $P_i$. Finally send $(0, \mathtt{Signature}, m, i, j, \sigma_{i,j})$ to $\mathcal{C_I}$
+    \item If $(\mathtt{Messages}, M)$ is received from $\mathcal{C_I}$ then for each $(m, \sigma) \in M$
+          choose $i, j \overset{R}{\leftarrow} \{1, \ldots, N\} \setminus I_\mathcal{A}$, make $\mathcal{Z}'$
+          sends $(\mathtt{Send}, m, j)$ to $P_i$ and drop the message $(\mathcal{S}, P_i, \mathtt{Send})$ sent
+          from $\mathcal{F}_{MN}$ to his own copy of $\mathcal{C_I}$ (similarly $\mathcal{S^A}$ can just append
+          $M$ to the list $L$ of $\mathcal{F}_{MN}$).
+\end{enumerate}
+\end{minipage}}
+\caption{The ideal adversary $\mathcal{S^A}$}
+\label{adv_S_A}
+\end{figure}
+
+We define
+$\mathrm{Real} = \mathcal{Z}(
+                    \mathcal{H}(
+                        \mathcal{A},
+                        \mathrm{SIGMIX},
+                        \tilde{\rho}^{\bar{\mathcal{G}}_{KRK}},
+                        \tilde{\phi}^{\mathcal{F}_{MN}}))$
+and
+$\mathrm{Ideal} = \mathcal{Z}(
+                    \mathcal{H}(
+                        \mathcal{S^A},
+                        \tilde{\pi}^{\mathcal{F}_{AAC}},
+                        \tilde{\rho}^{\bar{\mathcal{G}}_{KRK}}))$.
+Suppose there exists an environment $\mathcal{Z}$, an adversary $\mathcal{A}$ and a polynomial $p$ such that:
+\begin{equation}
+\left|
+%\begin{array}{c}
+    \Pr[\mathrm{Real} = 1]
+    - \Pr[\mathrm{Ideal} = 1]
+%\end{array}
+\right| \geq \frac{1}{p}
+\label{eq:guc}
+\end{equation}
+Then we define in figure \ref{adv:ddh} the adversary $\mathcal{D}_\textrm{DDH}$.
+
+\begin{figure}
+\framebox{\begin{minipage}[t]{1\columnwidth}
+The adversary $\mathcal{D}_{DDH}(g^\alpha, g^\beta, g^\gamma)$ attacking DDH works as follows:\\
+
+\begin{enumerate}
+    \item Simulate
+    $
+        \mathcal{Z}(
+        \mathcal{H}(
+            \mathcal{A},
+            \mathrm{SIGMIX},
+            \tilde{\rho}^{\bar{\mathcal{G}}_{KRK}},
+            \tilde{\phi}^{\mathcal{F}_{MN}}))
+    $.
+    % Que pasa si Z ejecuta un protocolo que devuelve g^x en P_i (devuelve la verdadera clave publica)
+    % esto tiene que ver con los protocolos phi de \cite[conf/tcc/DodisKSW09].
+    \item Choose $r_i, r_j \overset{R}{\leftarrow} G_q$ for $i,j \in \{1, \ldots, N\}\setminus I_\mathcal{A}$,
+          when $\tilde{P}_i$ registers on $\bar{\mathcal{G}}_{KRK}$ set the registered public key to $g^{\alpha r_i}$
+          and when $\tilde{P}_j$ registers set the public key to $g^{\beta r_j}$.
+    \item When $\mathcal{Z}$ sends $(\mathtt{Send}, m, j)$ to $P_i$ then replace the signature computed by $P_i$
+          with $\mathrm{MAC}_{g^{\gamma r_i r_j}}(m)$ for $j \notin I_\mathcal{A}$ and $\mathrm{MAC}_{g^{\gamma r_i x_j}}(m)$
+          for $j \in I_\mathcal{A}$.
+    \item When $P_i$ $i \notin I_\mathcal{A}$ receives $(\mathtt{Output}, L)$ from $\mathcal{F}_{MN}$ then compute
+          each signature with $\mathrm{MAC}_{g^{\gamma r_i r_j}}(m)$ for $j \notin I_\mathcal{A}$ and with
+          $\mathrm{MAC}_{g^{\gamma r_i x_j}}(m)$ for $j \in I_\mathcal{A}$.
+    \item When the simulation halts return the output of $\mathcal{Z}$
+\end{enumerate}
+\end{minipage}}
+\caption{The DDH adversary $\mathcal{D}_\textrm{DDH}$}
+\label{adv:ddh}
+\end{figure}
+
+Note that as in the DDH experiment $\alpha \in_{R} G_q$ and $\beta \in_{R} G_q$ then it is undistinguishable to the
+environment the modification made by $\mathcal{D}_{DDH}$. Then
+\begin{equation}
+\Pr[\mathrm{Real} = 1] = \Pr[\mathcal{D}_{DDH} = 1|\gamma = \alpha\beta]
+\label{eq:ddh_1}
+\end{equation}\\
+Now, the only possible difference between executing $\mathcal{D}_{DDH}$ when $\gamma \in_R G_q$ and executing
+$
+\mathcal{Z}(
+    \mathcal{H}(
+        \mathcal{S^A},
+        \tilde{\pi}^{\mathcal{F}_{AAC}},
+        \tilde{\rho}^{\bar{\mathcal{G}}_{KRK}}))
+$
+is the output of honest partys. But if there exists an honest party with index $j$ such that $M_j^\mathrm{Real} \neq M_j^\mathrm{Ideal}$,
+then there exists a pair $(m, l) \in M_j^\mathrm{Real}$. And it must hold that $(m, l) \notin M_j^\mathrm{Ideal}$ beacause the
+same messages are sent in Real and Ideal, except for those dropped by $\mathcal{S^A}$ in step 1 of the simulation of corrupted
+partys. The previous means that the adversay created a signature $\sigma \neq \mathrm{MAC}_{y_i^{x_l}}(m)$ for all $l \in I_\mathcal{A}$,
+and as it was accepted by $P_j$ it must be that $\sigma = \mathrm{MAC}_{g^{\gamma r_i r_j}}(m)$ for some $i \notin I_\mathcal{A}$.
+The latter contradicts unforgeability of MAC, then:
+\begin{equation}
+\Pr[\mathrm{Ideal} = 1] \approx \Pr[\mathcal{D}_{DDH} = 1|\gamma \in_R G_q]
+\label{eq:ddh_2}
+\end{equation}
+Replacing equation \ref{eq:ddh_1} and \ref{eq:ddh_2} in \ref{eq:guc} contradicts the asumption that DDH holds in $G_q$.
+\end{proof}
+
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+\bibliography{sigproc}  % sigproc.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+%\balancecolumns
+\appendix
+%Appendix A
+\section{An adaptation of Wikstr\"om's notation for the GUC Framework}
+In this section we review the definitions of \cite{mnCompleto} and adapt them
+when necesary to the GUC framework. Specifically we add communication between the
+environment and the ideal functionality. \\
+In \cite{mnCompleto} Wikstr\"om introduces a new machine to the UC framework, named
+the comunication model. The communication model is in charge of all aspects of the
+comunnication in UC. This definition comes to simplify the definition of wath the
+advesary can do in an execution, and it also makes innecesary the use of session id's
+as the comunnication models are local to each protocol instance.
+
+% Lo que sigue lo tome textual del paper de Wikstrom. No se si eso esta bien, pero
+% me parece innecesario re redactarlo
+\newdef{defAppendix}{Definition}
+
+\begin{defAppendix}
+An ITM-graph is a set $V = \{P_1, \ldots, P_t\} \subset \textrm{ITM}$ with a set of
+links $E$ such that $(V, E)$ is a connected graph, and no $P_i$ is linked to any
+machine outside $V$. Let ITMG be the set of ITM-graphs.\\
+During the execution of an ITM-graph, at most one participant is active. An active
+participant may deactivate itselfand activate any of its neighbors, or it may halt, in
+wich case the execution of the ITM-graph halts.
+\end{defAppendix}
+
+The real communication model models an asynchronous communication network, in wich the
+adversary can read, delete, modify, and insert any message of its choice. 
+
+\begin{defAppendix}
+A real communication model $\mathcal{C}$ is a machine with a link $l_{P_i}$, to $P_i$
+for $i = 1, \ldots, k$, , and a link $l_\mathcal{A}$ to a real adversary $\mathcal{A}$.
+Its program is defined as follows.
+\begin{enumerate}
+  \item If $m$ is read on $l_s$ where $s \in \{P_1, \ldots, P_k\}$, then $(s, m)$ is
+        written on $l_\mathcal{A}$ and $mathcal{A}$ is activated.
+  \item If $(r, m)$ is read on $l_\mathcal{A}$, where $r \in \{P_1, \ldots, P_k\}$
+        and $P_r$ is activated.
+\end{enumerate}
+\end{defAppendix}
+
+For simplicity
+we avoid to explicitly call the real communication model. When in a real world
+protocol we write "$P_i$ send $m$ to $P_j$`` we mean "$P_i$ send $(P_j,m)$ to
+$\mathcal{C}$``.\\
+The ideal communication model below captures the fact that the adversary may decide if
+and when it would like to deliver a message from the ideal functionality to a
+participant, but it can not read the contents of the communication between participants
+and the ideal functionality.
+
+\begin{defAppendix}
+An ideal communication model $\mathcal{C_I}$ is a machine with a link $l_{P_i}$, to
+$P_i$ for $i = 1, \ldots, k$,
+%a link $l_\mathtt{shared}$ to the ``outside world",
+and links $l_\mathcal{F}$, and $l_\mathcal{S}$ to a (shared) ideal functionality $\mathcal{F}$
+and an ideal adversary $\mathcal{S}$ respectively. Its program is defined as follows.
+\begin{enumerate}
+  \item If a message $m$ is read on $l_s$, where $s \in \{P_1, \ldots, P_k\}$,
+        then $(s, m)$ is written on $l_\mathcal{F}$ and $\mathcal{F}$ is activated.
+  \item If a message $(s, m)$ written on $l_\mathcal{F}$ is returned unaltered, $m$ is
+        written on $l_s$. If not, any string reqad from $l_\mathcal{F}$ is interpreted
+        as a list $((r_1, m_1), \ldots, (r_t, m_t))$, where $r_i \in \{\mathcal{S},
+        P_1, \ldots, P_k\}$. For each $m_i$ a random string $\tau_i \in \{0, 1\}^n$ is
+        chosen, and $(r_i, m_i)$ is stored under $(\tau_i)$. Then $((r_1, |m_1|, \tau_1),
+        \ldots, (r_t, |m_t|, \tau_t))$, where $|m_i|$ is the bit-length of $m_i$, is
+        written on $l_\mathcal{S}$ and $\mathcal{S}$ is activated.
+  \item Any string read from $l_\mathcal{S}$ is interpreted as a pair $(b, \tau)$, where
+        $b \in \{0, 1\}$ and $\tau$ is an arbitrary string. If $b = 1$ and $(r_i, m_i)$
+        is stored in the database under the index $\tau$, $m_i$ is written on $l_{r_i}$
+        and $r_i$ is activated. Otherwise $(\mathcal{S}, \tau)$ is written to
+       $l_\mathcal{F}$ and $\mathcal{F}$ is activated.
+%  \item If $(\mathtt{NewSession}, P'_1, \ldots, P'_{k'})$ is read from $l_\mathtt{shared}$,
+%        $\mathcal{F}$ is a shared functionality, and $P_i \neq P_j$ for $i = 1, \ldots,
+%        k \quad j = 1, \ldots, k'$ then let $\mathtt{shared} \leftarrow 1$. Else
+%        ignore the input.
+%  \item If $(s,m)$ is read on $l_\mathtt{shared}$, $\mathtt{shared} = 1$ and $s \neq P_i$
+%        for $i = 1, \ldots, k$, then write $(s, m)$ to $l_\mathcal{F}$. Else ignore the
+%        input
+\end{enumerate}
+\end{defAppendix}
+
+%The $l_\mathtt{shared}$ allows the environment to create protocols sharing state with
+%the analized protocol through the shared functionality.\\
+An adversary can normally corrupt some subset of the participants in a protocol. A
+\textit{dummy participant} is a machine that given two links writes any message from
+one of the links to the other. There may be many copies of the dummy participant.
+Following Canetti we use the $\tilde{}$-notation, e.g. $\tilde{P}$, for dummy participants.
+%Similarly we introduce \textit{dummy functionalities}, a dummy functionality exactly as the
+%dummy participant but it have
+\\
+The ideal model below captures the setup one wishes to realize, i.e. the environment
+may indirectly interact with ideal functionalities and the ideal adversary $\mathcal{S}$
+has some control over how the communication model behaves.
+
+\begin{defAppendix}
+The ideal model is defined to be the map $\mathcal{I}:\textrm{ITM}^2 \times
+\tilde{\textrm{ITM}}^* \to \textrm{ITMG}$, where $\mathcal{I}: (\mathcal{F}, \mathcal{S}
+\tilde{P}_1, \ldots, \tilde{P}_k) \mapsto (V, E)$ is given by:
+$$V = \{\mathcal{C_I}, \mathcal{F}, \mathcal{S}, \tilde{P}_1, \ldots, \tilde{P}_k\}$$
+$$E = \{(\mathcal{S}, \mathcal{C_I}), (\mathcal{C_I}, \mathcal{F})\} \cup
+\bigcup_{i = 1}^{k}\{(\tilde{P}_i, \mathcal{C_I})\}$$
+\end{defAppendix}
+
+If $\tilde{\pi} = (\tilde{P}_1, \ldots, \tilde{P}_k)$, we write
+$\mathcal{I}(\mathcal{S}, \tilde{\pi}^\mathcal{F})$ instead of $\mathcal{I}(\mathcal{F},
+\mathcal{S}, \tilde{P}_1, \ldots, \tilde{P}_k)$ to ease notation.\\
+The real model is supposed to capture the properties of the real world. The participants
+may interact over the real communication model.\\
+
+\begin{defAppendix}
+The real model is defined to be a map $\mathcal{R}:\textrm{ITM}^* \to \textrm{ITMG}$,
+where $\mathcal{R}:(\mathcal{A}, P_1, \ldots, P_k) \mapsto (V, E)$ is given by:
+$$V = \{\mathcal{C}, \mathcal{A}, P_1, \ldots, P_k\}$$
+$$E = \{(\mathcal{A}, \mathcal{C})\}\cup\bigcup_{i=1}^k\{(P_i, \mathcal{C})\}$$
+\end{defAppendix}
+
+Let $(V, E) = \mathcal{I}(\mathcal{F}, \mathcal{S}, \tilde{P}_1, \ldots, \tilde{P}_k)$.
+Then we write $\mathcal{Z}(\mathcal{I}(\mathcal{F}, \mathcal{S}, \tilde{P}_1, \ldots,
+\tilde{P}_k))$ for the ITM-graph $(V', E')$ defined by $V' = V \cup \{\mathcal{Z}\}$,
+and $E' = E \cup \{(\mathcal{Z}, \mathcal{S})\} \bigcup_{i=1}^k \{(\mathcal{Z}, \tilde{P}_i)\}$.
+If instead of a normal ideal functionality $\mathcal{F}$ we have $\bar{\mathcal{G}}$, a shared
+ideal functionality, then we introduce a link between the
+environment $\mathcal{Z}$ and the shared ideal communication model $\mathcal{C_I}$ by let
+$E' = E \cup \{(\mathcal{Z}, \mathcal{S})\} \cup \{(\mathcal{Z}, \mathcal{C_I})\}
+\cup \bigcup_{i=1}^k \{(\mathcal{Z}, \tilde{P}_i)\}$. We use the corresponding notation in the
+real model case.\\
+A hybrid model is a mix between a number of ideal and real models, and captures the execution
+of a real world protocol with access to some ideal functionalities. It is also a tool to
+modularize security proofs. It may be viewed as if we ``glue" a number of ideal and real
+models onto an original real model.
+
+\begin{defAppendix}
+Suppose that we are given $(V, E) = \mathcal{R}(\mathcal{A}, \pi)$, $\pi = (P_1, \ldots, P_k)$.
+Let $(V_j, E_j) =
+\mathcal{I}(\mathcal{S}_j,
+            \tilde{\pi}^{\mathcal{F}_j}_j)$,
+$\tilde{\pi}_j = (\tilde{P}_{j, 1}, \ldots, \tilde{P}_{j, k})$ for $j = 1, \ldots, r$,
+$(V_j, E_j) = \mathcal{I}(\mathcal{S}_j,
+                          \tilde{\pi}^{\bar{\mathcal{G}}_j})$
+$\tilde{\pi}_j = (\tilde{P}_{j, 1}, \ldots, \tilde{P}_{j, k})$ for $j = r+1, \ldots, t$,
+and $(V_j, E_j) =
+\mathcal{R}(\mathcal{S}_j,\pi_j)$,
+$\pi_j = (P_{j, 1}, \ldots, P_{j, k})$ for $j = t+1, \ldots, s$.\\
+We denote by $\mathcal{H}(\mathcal{A}^{\mathcal{S}_1, \ldots, \mathcal{S}_t},
+\pi^{\tilde{\pi}_1^{\mathcal{F}_1}, \ldots, \tilde{\pi}_r^{\mathcal{F}_r},
+\tilde{\pi}_{r+1}^{\bar{\mathcal{G}}_{r+1}}, \ldots, \tilde{\pi}_t^{\bar{\mathcal{G}}_t},
+\pi_{t+1}, \ldots, \pi_s})$ the hybrid model defined as the ITM-graph $(V', E')$, wherei
+$$V' = V \cup \bigcup_{j=1}^t V_j \textrm{, and}$$
+$$E' = E \cup \bigcup_{j=1}^t E_j \cup \bigcup_{i=1}^k \left(\{(\mathcal{S}_i, \mathcal{A})\}
+\cup \bigcup_{j=1}^t \{(P_i, \tilde{P}_{j, i})\}\right)$$
+Similarly as above we write $\mathcal{Z}(\mathcal{H}(\mathcal{A}^{\mathcal{S}_1, \ldots,
+\mathcal{S}_t}, \pi^{\tilde{\pi}_1^{\mathcal{F}_1}, \ldots, \tilde{\pi}_r^{\mathcal{F}_r},
+\tilde{\pi}_{r+1}^{\bar{\mathcal{G}}_{r+1}},}$ ${}^{\ldots, \tilde{\pi}_t^{\bar{\mathcal{G}}_t},
+\pi_{t+1}, \ldots, \pi_s}))$ to denote the ITM-graph $(V'', E'')$ defined by $V'' = V \cup
+\{\mathcal{Z}\}$, and $E'' = E' \cup \{\mathcal{Z}, \mathcal{A}\} \cup \bigcup_{i=1}^k
+\bigcup_{j=r+1}^t \{(\mathcal{Z}, \tilde{P}_{i,j})\} \cup \bigcup_{i=1}^k \{(\mathcal{Z}, P_i)\}$.
+We remark that the set links $\bigcup_{i=1}^k \bigcup_{j=r+1}^t \{(\mathcal{Z}, \tilde{P}_{i,j})\}$
+is all the necesary to model GUC security if \textbf{the environment does not invoke new partys
+sharing state with the analized protocol}. This is not a limitation for our work, beacuse a new
+party can only register a new $(pk, sk)$ pair in $\bar{\mathcal{G}}_{KRK}$, and this value is completely
+unrelated with the other values stored in $\bar{\mathcal{G}}_{KRK}$.
+\end{defAppendix}
+
+\section{Proofs}
+In this section we provide proofs for lemma \ref{lemma:sigmix} and show that the mixnet
+from \cite{Wikstrom04a} also GUC-realize the ideal functionality $\mathcal{F}_{MN}$
+\end{document}
