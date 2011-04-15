@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: paper_memoria2.aux
+The style file: abbrv.bst
+Database file #1: sigproc.bib
+Warning--I'm ignoring conf/tcc/DodisKSW09's extra "booktitle" field
+--line 161 of file sigproc.bib
+A bad cross reference---entry "conf/csfw/Canetti04"
+refers to entry "conf/csfw/2004", which doesn't exist
+Warning--I didn't find a database entry for "CanKusLin06"
+Warning--I didn't find a database entry for "conf/csfw/2004"
+Warning--to sort, need author or key in mnCompleto
+Warning--empty author in mnCompleto
+Warning--empty booktitle in mnCompleto
+Warning--empty year in mnCompleto
+You've used 10 entries,
+            2118 wiz_defined-function locations,
+            569 strings with 5297 characters,
+and the built_in function-call counts, 3474 in all, are:
+= -- 337
+> -- 126
+< -- 7
++ -- 52
+- -- 40
+* -- 227
+:= -- 539
+add.period$ -- 31
+call.type$ -- 10
+change.case$ -- 49
+chr.to.int$ -- 0
+cite$ -- 14
+duplicate$ -- 163
+empty$ -- 311
+format.name$ -- 40
+if$ -- 761
+int.to.chr$ -- 0
+int.to.str$ -- 10
+missing$ -- 10
+newline$ -- 51
+num.names$ -- 22
+pop$ -- 66
+preamble$ -- 1
+purify$ -- 39
+quote$ -- 0
+skip$ -- 112
+stack$ -- 0
+substring$ -- 196
+swap$ -- 53
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 40
+warning$ -- 4
+while$ -- 34
+width$ -- 12
+write$ -- 110
+(There was 1 error message)

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.8.19)  24 MAR 2011 11:28
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.8.19)  28 MAR 2011 14:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**paper_memoria.tex
-(./paper_memoria.tex
+**paper_memoria2.tex
+(./paper_memoria2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
@@ -178,8 +178,8 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
 (/usr/share/texmf-texlive/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-))) (./paper_memoria.aux)
-\openout1 = `paper_memoria.aux'.
+))) (./paper_memoria2.aux)
+\openout1 = `paper_memoria2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
@@ -221,25 +221,29 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 105.
 (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for T1+aett on input line 106.
+\c@definition=\count114
+\c@theorem=\count115
+\c@lemma=\count116
+\c@proposition=\count117
+LaTeX Font Info:    Try loading font information for T1+aett on input line 112.
 
 
 (/usr/share/texmf-texlive/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Overfull \hbox (1.0793pt too wide) in paragraph at lines 107--113
+Overfull \hbox (1.0793pt too wide) in paragraph at lines 113--119
 \T1/aer/m/it/9 Prepar-ing ACM SIG Pro-ceed-ings Us-ing L[]T[]X$\OT1/cmr/m/n/9 2
 []$ \T1/aer/m/it/9 and BibT[]X\T1/aer/m/n/9 .
  []
 
 
-Overfull \hbox (1.26794pt too wide) in paragraph at lines 129--130
+Overfull \hbox (1.26794pt too wide) in paragraph at lines 135--136
 \T1/aer/m/n/9 H.4 [\T1/aer/bx/n/9 Information Sys-tems Ap-pli-ca-tions\T1/aer/m
 /n/9 ]: Mis-cel-la-neous;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--174
+Underfull \hbox (badness 10000) in paragraph at lines 155--180
 
  []
 
@@ -247,14 +251,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--174
 
 
 ]
-\c@definition=\count114
-
-Overfull \hbox (2.18555pt too wide) in paragraph at lines 197--199
+Overfull \hbox (2.18555pt too wide) in paragraph at lines 202--204
 []\T1/aer/m/n/9 The real com-mu-ni-ca-tion model mod-els an asyn-chronous com-
  []
 
 
-Overfull \hbox (28.22177pt too wide) in paragraph at lines 274--279
+Overfull \hbox (28.22177pt too wide) in paragraph at lines 279--284
 []\T1/aer/m/n/9 If $[] \OT1/cmr/m/n/9 = ([]\OML/cmm/m/it/9 ; [] ; []\OT1/cmr/m/
 n/9 )$\T1/aer/m/n/9 , we write $\OMS/cmsy/m/n/9 I\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/
 9 S\OML/cmm/m/it/9 ; []\OT1/cmr/m/n/9 )$ \T1/aer/m/n/9 in-stead of $\OMS/cmsy/m
@@ -263,12 +265,12 @@ cmm/m/it/9 ; []; [] ; []\OT1/cmr/m/n/9 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--279
+Underfull \hbox (badness 10000) in paragraph at lines 279--284
 
  []
 
 
-Overfull \hbox (43.70726pt too wide) in paragraph at lines 287--296
+Overfull \hbox (43.70726pt too wide) in paragraph at lines 292--301
 []\T1/aer/m/n/9 Let $\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 V; E\OT1/cmr/m/n/9 ) = \OM
 S/cmsy/m/n/9 I\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/9 F\OML/cmm/m/it/9 ; \OMS/cmsy/m/n/
 9 S\OML/cmm/m/it/9 ; []; [] ; []\OT1/cmr/m/n/9 )$\T1/aer/m/n/9 . Then we write 
@@ -278,14 +280,14 @@ n/9 F\OML/cmm/m/it/9 ; \OMS/cmsy/m/n/9 S\OML/cmm/m/it/9 ; []; [] ; []\OT1/cmr/m
  []
 
 [2]
-Overfull \hbox (1.46425pt too wide) in paragraph at lines 298--320
+Overfull \hbox (1.46425pt too wide) in paragraph at lines 303--325
 []\T1/aer/m/n/9 Suppose that we are given $\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 V; E
 \OT1/cmr/m/n/9 ) = \OMS/cmsy/m/n/9 R\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/9 A\OML/cmm/m
 /it/9 ; ^^Y\OT1/cmr/m/n/9 )$\T1/aer/m/n/9 ,
  []
 
 
-Overfull \hbox (18.76366pt too wide) in paragraph at lines 298--320
+Overfull \hbox (18.76366pt too wide) in paragraph at lines 303--325
 \OML/cmm/m/it/9 ^^Y \OT1/cmr/m/n/9 = (\OML/cmm/m/it/9 P[]; [] ; P[]\OT1/cmr/m/n
 /9 )$\T1/aer/m/n/9 . Let $\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 V[]; E[]\OT1/cmr/m/n/
 9 ) = \OMS/cmsy/m/n/9 I\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/9 S[]\OML/cmm/m/it/9 ; []\
@@ -294,7 +296,7 @@ OT1/cmr/m/n/9 )$\T1/aer/m/n/9 , $[] \OT1/cmr/m/n/9 = ([]\OML/cmm/m/it/9 ; [] ;
  []
 
 
-Overfull \hbox (6.88771pt too wide) in paragraph at lines 298--320
+Overfull \hbox (6.88771pt too wide) in paragraph at lines 303--325
 \T1/aer/m/n/9 for $\OML/cmm/m/it/9 j \OT1/cmr/m/n/9 = 1\OML/cmm/m/it/9 ; [] ; t
 $\T1/aer/m/n/9 , and $\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 V[]; E[]\OT1/cmr/m/n/9 ) 
 = \OMS/cmsy/m/n/9 R\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/9 S[]\OML/cmm/m/it/9 ; ^^Y[]\O
@@ -303,37 +305,36 @@ m/m/it/9 P[]; [] ; P[]\OT1/cmr/m/n/9 )$
  []
 
 
-Overfull \hbox (21.22514pt too wide) in paragraph at lines 331--355
+Overfull \hbox (21.22514pt too wide) in paragraph at lines 336--360
 \T1/aer/m/n/9 Similarly as above we write $\OMS/cmsy/m/n/9 Z\OT1/cmr/m/n/9 (\OM
 S/cmsy/m/n/9 H\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/9 A[]\OML/cmm/m/it/9 ; ^^Y[]\OT1/cm
 r/m/n/9 ))$
  []
 
-\c@theorem=\count115
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--389
+Underfull \hbox (badness 10000) in paragraph at lines 390--394
 
  []
 
 
 LaTeX Warning: Citation `CanKusLin06' on page \thepage  undefined on input line
- 401.
+ 406.
 
 
-Overfull \hbox (2.39189pt too wide) in paragraph at lines 391--440
+Overfull \hbox (2.39189pt too wide) in paragraph at lines 396--445
 \T1/aer/m/it/9 shared func-tion-al-ity $[]$\T1/aer/m/n/9 . GUC frame-work mod-e
 ls $[]$-subroutine
  []
 
 
-Overfull \hbox (61.00095pt too wide) in paragraph at lines 391--440
+Overfull \hbox (61.00095pt too wide) in paragraph at lines 396--445
 \T1/aer/m/n/9 ITM-graph $\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 V; E\OT1/cmr/m/n/9 )$ 
 \T1/aer/m/n/9 given by $\OMS/cmsy/m/n/9 H\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/9 A[]\OM
 L/cmm/m/it/9 ; ^^Y[]\OT1/cmr/m/n/9 ))$\T1/aer/m/n/9 ,
  []
 
 
-Overfull \hbox (24.31012pt too wide) in paragraph at lines 391--440
+Overfull \hbox (24.31012pt too wide) in paragraph at lines 396--445
 \T1/aer/m/n/9 by $\OML/cmm/m/it/9 V[] \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 V \OMS/c
 msy/m/n/9 [ fZg$\T1/aer/m/n/9 , and $\OML/cmm/m/it/9 E[] \OT1/cmr/m/n/9 = \OML/
 cmm/m/it/9 E[] \OMS/cmsy/m/n/9 [ fZ\OML/cmm/m/it/9 ; \OMS/cmsy/m/n/9 Ag [ [][] 
@@ -342,7 +343,7 @@ cmsy/m/n/9 g [
  []
 
 
-Overfull \hbox (31.73705pt too wide) in paragraph at lines 391--440
+Overfull \hbox (31.73705pt too wide) in paragraph at lines 396--445
 [][]\OMS/cmsy/m/n/9 f\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/9 Z\OML/cmm/m/it/9 ; P[]\OT1
 /cmr/m/n/9 )\OMS/cmsy/m/n/9 g$\T1/aer/m/n/9 . We re-mark that the set links $[]
 [] [][]\OMS/cmsy/m/n/9 f\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/9 Z\OML/cmm/m/it/9 ; []\O
@@ -350,187 +351,154 @@ T1/cmr/m/n/9 )\OMS/cmsy/m/n/9 g$
  []
 
 
-Overfull \hbox (5.0491pt too wide) in paragraph at lines 441--441
+Overfull \hbox (5.0491pt too wide) in paragraph at lines 446--446
 []\secfnt Deniable au-then-ti-ca-tion in the GUC frame-
  []
 
-[3]
-Underfull \hbox (badness 1237) in paragraph at lines 517--517
-\OML/cmm/m/it/9 J[] \OMS/cmsy/m/n/9 [ f\OML/cmm/m/it/9 j\OMS/cmsy/m/n/9 g$\T1/a
-er/m/n/9 . If $\OMS/cmsy/m/n/9 j\OML/cmm/m/it/9 J[]\OMS/cmsy/m/n/9 j ^^U \OML/c
-mm/m/it/9 k=\OT1/cmr/m/n/9 2$\T1/aer/m/n/9 , then sort the list
+[3] [4]
+Underfull \hbox (badness 6842) in paragraph at lines 670--670
+[]\T1/aer/m/n/9 The Ideal func-tion-al-ity $\OMS/cmsy/m/n/9 F[]$ \T1/aer/m/n/9 
+run-ning with mix-ers
  []
 
 
-Underfull \hbox (badness 1184) in paragraph at lines 517--517
-\OML/cmm/m/it/9 L$ \T1/aer/m/n/9 lex-i-co-graph-i-cally to form a list $\OML/cm
-m/m/it/9 L[]$\T1/aer/m/n/9 , and hand
+Overfull \hbox (6.4pt too wide) in paragraph at lines 670--671
+[][] 
  []
 
 
-Underfull \hbox (badness 2302) in paragraph at lines 517--517
-\OT1/cmr/m/n/9 ((\OMS/cmsy/m/n/9 S\OML/cmm/m/it/9 ; M[]; []; L[]\OT1/cmr/m/n/9 
-)\OML/cmm/m/it/9 ; \OMS/cmsy/m/n/9 f\OML/cmm/m/it/9 M[]; []; L[]\OMS/cmsy/m/n/9
- g[]\OT1/cmr/m/n/9 )$ \T1/aer/m/n/9 to to $[]$.
- []
-
-
-Overfull \hbox (6.4pt too wide) in paragraph at lines 517--519
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 517--519
-
- []
-
-
-Overfull \hbox (9.14076pt too wide) in paragraph at lines 523--523
+Overfull \hbox (9.14076pt too wide) in paragraph at lines 698--698
 []\secfnt ANONYMOUS AU-THEN-TI-CATED CHAN-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--561
-\OML/cmm/m/it/9 m[] \OMS/cmsy/m/n/9 2 \OML/cmm/m/it/9 G[]$ \T1/aer/m/n/9 to $[]
-$, wait un-til re-ceiv-ing
- []
-
-
-Underfull \hbox (badness 4108) in paragraph at lines 561--561
-\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/9 S\OML/cmm/m/it/9 ; []; m[]; i; j; ^^[[]\OT1/cmr
-/m/n/9 )$ $\OML/cmm/m/it/9 ^^[[] \OMS/cmsy/m/n/9 2 \OML/cmm/m/it/9 G[]$ \T1/aer
-/m/n/9 from $[]$
- []
-
-
-Overfull \hbox (6.4pt too wide) in paragraph at lines 561--563
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 561--563
-
- []
-
-[4]
-
-LaTeX Warning: Reference `func:g_krk' on page \thepage  undefined on input line
- 599.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 654--654
+Underfull \hbox (badness 10000) in paragraph at lines 701--708
 
  []
 
 
-Overfull \hbox (9.47786pt too wide) in paragraph at lines 654--655
+Underfull \hbox (badness 1910) in paragraph at lines 731--731
+[]\T1/aer/m/n/9 Functionality $\OMS/cmsy/m/n/9 F[]$ \T1/aer/m/n/9 run-ning with
+ shared func-tion-al-ity
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 731--731
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 731--731
+[]\T1/aer/m/n/9 If $[]$ is cor-rupted then send
+ []
+
+
+Overfull \hbox (6.4pt too wide) in paragraph at lines 731--732
 [][] 
- []
-
-\c@lemma=\count116
-
-Overfull \hbox (44.36884pt too wide) in paragraph at lines 670--695
-\T1/aer/m/n/9 vi-ron-ment $\OMS/cmsy/m/n/9 Z$ \T1/aer/m/n/9 that dis-tin-guish 
-from an ex-e-cu-tion of $\OMS/cmsy/m/n/9 H\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/9 S\OML
-/cmm/m/it/9 ; []; []\OT1/cmr/m/n/9 )$
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 745--745
+
+LaTeX Warning: Reference `func:g_krk' on page \thepage  undefined on input line
+ 783.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 843--843
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 745--745
+Overfull \hbox (9.47786pt too wide) in paragraph at lines 843--844
+[][] 
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 1026--1026
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 745--745
+Underfull \hbox (badness 1533) in paragraph at lines 1026--1026
+\T1/aer/m/n/9 and the par-ties $\OML/cmm/m/it/9 P[]; [] ; P[]$ \T1/aer/m/n/9 ex
+-e-cut-ing SIG-MIX in the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1026--1026
 
  []
 
 
-Underfull \hbox (badness 1590) in paragraph at lines 745--745
-[]\T1/aer/m/n/9 If $\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 ; []\OT1/cmr/m/n/9 )$ \T1
-/aer/m/n/9 is re-ceived from $[]$ then make $\OMS/cmsy/m/n/9 Z[]$
+Underfull \hbox (badness 10000) in paragraph at lines 1026--1026
+
  []
 
 
-Underfull \hbox (badness 2922) in paragraph at lines 745--745
-\T1/aer/m/n/9 sends $\OT1/cmr/m/n/9 ([])$ \T1/aer/m/n/9 to $\OML/cmm/m/it/9 P[]
-$ \T1/aer/m/n/9 and make $\OMS/cmsy/m/n/9 F[]$ \T1/aer/m/n/9 sends
+Overfull \hbox (6.4pt too wide) in paragraph at lines 1026--1027
+[][] 
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 1078--1078
+
  []
 
 
-Underfull \hbox (badness 2310) in paragraph at lines 745--745
-[]\T1/aer/m/n/9 If $\OT1/cmr/m/n/9 ([]\OML/cmm/m/it/9 ; m; i; j\OT1/cmr/m/n/9 )
-$ \T1/aer/m/n/9 is re-ceived from $[]$ re-cover $\OML/cmm/m/it/9 x[]$
- []
-
-
-Underfull \hbox (badness 1067) in paragraph at lines 745--745
-\T1/aer/m/n/9 and $\OML/cmm/m/it/9 y[]$ \T1/aer/m/n/9 from $[]$ (not the sim-u-
-lated one), let
- []
-
-
-Overfull \hbox (6.4pt too wide) in paragraph at lines 745--746
+Overfull \hbox (6.4pt too wide) in paragraph at lines 1078--1079
 [][] 
  []
 
 
-Overfull \hbox (15.58824pt too wide) in paragraph at lines 750--764
-[]\T1/aer/m/n/9 We de-fine $[] \OT1/cmr/m/n/9 = \OMS/cmsy/m/n/9 Z\OT1/cmr/m/n/9
- (\OMS/cmsy/m/n/9 H\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/9 A\OML/cmm/m/it/9 ; []; []; [
-]\OT1/cmr/m/n/9 ))$ \T1/aer/m/n/9 and $[] \OT1/cmr/m/n/9 =
+Overfull \hbox (2.19884pt too wide) detected at line 1088
+[]\OT1/cmr/m/n/9 [[] = 1] = [][\OMS/cmsy/m/n/9 D[]\OT1/cmr/m/n/9 ((\OMS/cmsy/m/
+n/9 f\OML/cmm/m/it/9 g[]\OMS/cmsy/m/n/9 g[]\OML/cmm/m/it/9 ; \OMS/cmsy/m/n/9 f\
+OML/cmm/m/it/9 g[]\OMS/cmsy/m/n/9 g[]\OT1/cmr/m/n/9 ) = 1]\OML/cmm/m/it/9 :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 802--802
+Underfull \hbox (badness 10000) in paragraph at lines 1132--1132
 
  []
 
 
-Overfull \hbox (6.4pt too wide) in paragraph at lines 802--803
+Overfull \hbox (6.4pt too wide) in paragraph at lines 1132--1133
 [][] 
  []
 
-(./paper_memoria.bbl [6]) [7
+(./paper_memoria2.bbl [8]) [9
 
-] (./paper_memoria.aux)
+] (./paper_memoria2.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2283 strings out of 495061
- 25809 string characters out of 1182621
- 90191 words of memory out of 3000000
- 5404 multiletter control sequences out of 15000+50000
- 64001 words of font info for 91 fonts, out of 3000000 for 9000
+ 2288 strings out of 495061
+ 25917 string characters out of 1182621
+ 91239 words of memory out of 3000000
+ 5415 multiletter control sequences out of 15000+50000
+ 59979 words of font info for 86 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 39i,12n,26p,231b,330s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,12n,26p,232b,310s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmcsc10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cme
-xtra/cmex9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi5.p
-fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cms
-y5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr
-/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf
--texlive/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmtt9.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uh
-vb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/sh
-are/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb>
-Output written on paper_memoria.pdf (7 pages, 281886 bytes).
+ve/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cmextra/cmex9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.p
+fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmsy5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cms
+y6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-texlive/fonts/type1/urw
+/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.
+pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb>
+Output written on paper_memoria2.pdf (9 pages, 299264 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
+ 105 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
